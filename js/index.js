@@ -36,7 +36,6 @@ $video.addEventListener("timeupdate", handleTimeUpload);
 
 function handleLoaded() {
     $progress.max = $video.duration
-    console.log("video cargado");
 }
 
 function handleTimeUpload() {
@@ -48,3 +47,17 @@ $progress.addEventListener("input", handleInput)
 function handleInput() {
     $video.currentTime = $progress.value;
 }
+
+const $fullscreen = document.querySelector("#fullscreen");
+$fullscreen.addEventListener("click", openFullscreen);
+/* When the openFullscreen() function is executed, open the video in fullscreen.
+Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+function openFullscreen() {
+    if ($video.requestvideo) {
+        $video.requestFullscreen();
+    } else if ($video.webkitRequestFullscreen) { /* Safari */
+        $video.webkitRequestFullscreen();
+    } else if ($video.msRequestFullscreen) { /* IE11 */
+        $video.msRequestFullscreen();
+    }
+  }
