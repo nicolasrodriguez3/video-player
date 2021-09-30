@@ -4,6 +4,22 @@
 body {
     background-color: #181818;
     font-family: 'Source Sans Pro', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: relative;
+    height: 8vh;
+    width: 100%;
+    background-color: rgb(39, 39, 39);
+    line-height: 8vh;
+}
+
+header h1 {
+    color: #FFF;
+    margin-block-start: 0;
+    margin-inline-start: 2%;
 }
 
 .wrapper {
@@ -12,7 +28,7 @@ body {
 }
 
 .player {
-    margin-block-start: 100px;
+    margin-block-start: 15%;
     position: relative;
 }
 
